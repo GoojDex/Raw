@@ -1,0 +1,158 @@
+
+
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0">
+  <meta http-equiv="expires" content="Sat, 31 Oct 2014 00:00:00 GMT">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  
+  <style>
+  .gamewindowBox{height:100%;left:0;position:relative;top:0;width:100%}.controls{align-items:flex-start;display:flex;position:absolute;z-index:100000000000000000}.shopBtn{background:hsla(0,0%,100%,.5);position:static}.accountBtn,.shopBtn{cursor:pointer;display:inline-block;font-weight:700;padding:2px 22px}.accountBtn{background:rgba(46,204,113,.749);color:#fff;position:absolute}.accountBtn,.topRight{right:0;top:0}#account{background-color:hsla(0,0%,100%,.9);height:100%;max-height:100%;opacity:0;pointer-events:none;position:absolute;transform:translateY(-100%);transition:all .5s ease-in-out;width:100%;z-index:100000000000000000}#account.open{opacity:1;pointer-events:auto;transform:translateY(0)!important}.panel{background-color:#fff;box-shadow:2px 2px 5px 1px rgba(0,0,0,.17);margin:40px;padding:20px}#shop{background-color:hsla(0,0%,100%,.9);height:100%;opacity:0;pointer-events:none;position:absolute;transform:translateY(-100%);transition:all .5s ease-in-out;width:100%;z-index:100000000000000000}#shop.open{opacity:1;pointer-events:auto;transform:translateY(0)!important}.editBtn{background:#c0392b;border:0 hidden;color:#fff!important;padding:4px 20px;text-decoration:none!important}.bottonBar{background-color:#ccc;bottom:0;padding:10px;position:absolute;text-align:right;width:100%;z-index:10000000000000000}.mainShop{height:90%}.mainShop,.product{overflow:auto;padding:20px;position:relative}.product{align-items:center;background-color:#f1f1f1;border:1px solid #000;display:inline-block;height:285px;margin:12px;max-width:495px;transition:all .2s ease-in-out;width:100%}.product:hover{background-color:#fff}.price{color:#27ae60;font-weight:700}.productInner{width:100%}*{scrollbar-color:#3a343c #f0f0f0;scrollbar-width:auto}::-webkit-scrollbar{width:28px}::-webkit-scrollbar-track{background:#f0f0f0}::-webkit-scrollbar-thumb{background-color:#3a343c;border:3px solid #fff;border-radius:10px}.errorBox{align-items:center;background-color:rgba(192,57,43,.761);bottom:47px;color:#fff;display:flex;font-size:18px;height:auto;justify-content:center;left:0;padding:5px;position:fixed;width:100%;z-index:1000000000000000100}.errorBox a{color:#f1f1f1}.description{height:68px;overflow:auto}.restart{display:inline-block}.statBtn{background:#27ae60;border:0 hidden;color:#fff!important;padding:4px 20px;text-decoration:none!important}.paid{color:#333;font-size:22px;font-weight:700}.paid,.resetBtn{display:inline-block}#messagesForAccount{bottom:0;left:0;position:fixed;z-index:1000000000000000100}.gameMessage{background-color:#fff;border-radius:10px;margin:20px;padding:20px;position:relative}.gameMessage.error{background-color:rgba(192,57,43,.761);color:#fff}.gameMessage.success{background-color:#2ecc71;color:#fff}
+  </style>
+  
+      
+    <style type='text/css'>  body{background-color:#000!important;vertical-align:middle;margin:auto auto;}  </style>
+<style>
+.animated{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.animated.infinite{-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.animated.hinge{-webkit-animation-duration:2s;animation-duration:2s}.animated.bounceIn,.animated.bounceOut,.animated.flipOutX,.animated.flipOutY{-webkit-animation-duration:.75s;animation-duration:.75s}
+@-webkit-keyframes lightSpeedIn{0%{-webkit-transform:translate3d(100%,0,0) skewX(-30deg);transform:translate3d(100%,0,0) skewX(-30deg);opacity:0}60%{-webkit-transform:skewX(20deg);transform:skewX(20deg)}60%,80%{opacity:1}80%{-webkit-transform:skewX(-5deg);transform:skewX(-5deg)}to{-webkit-transform:none;transform:none;opacity:1}}@keyframes  lightSpeedIn{0%{-webkit-transform:translate3d(100%,0,0) skewX(-30deg);transform:translate3d(100%,0,0) skewX(-30deg);opacity:0}60%{-webkit-transform:skewX(20deg);transform:skewX(20deg)}60%,80%{opacity:1}80%{-webkit-transform:skewX(-5deg);transform:skewX(-5deg)}to{-webkit-transform:none;transform:none;opacity:1}}.lightSpeedIn{-webkit-animation-name:lightSpeedIn;animation-name:lightSpeedIn;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}
+@-webkit-keyframes lightSpeedOut{0%{opacity:1}to{-webkit-transform:translate3d(100%,0,0) skewX(30deg);transform:translate3d(100%,0,0) skewX(30deg);opacity:0}}@keyframes  lightSpeedOut{0%{opacity:1}to{-webkit-transform:translate3d(100%,0,0) skewX(30deg);transform:translate3d(100%,0,0) skewX(30deg);opacity:0}}.lightSpeedOut{-webkit-animation-name:lightSpeedOut;animation-name:lightSpeedOut;-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}
+.messageBox{
+    position:absolute;
+    background-color:#FFF;
+    padding:10px;
+    text-align:left;
+    bottom:10%;
+    right:10%;
+    z-index:99999;
+    opacity:0;
+    color:#2c3e50;
+    pointer-events: inherit;
+-webkit-box-shadow: 12px 13px 27px -15px rgba(0,0,0,0.67);
+-moz-box-shadow: 12px 13px 27px -15px rgba(0,0,0,0.67);
+box-shadow: 12px 13px 27px -15px rgba(0,0,0,0.67);
+}
+.lightSpeedOut{
+    pointer-events: none;
+}
+body::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+#gameSpace{
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999999;
+    background-color:#000;
+}
+#adSpace{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999999;
+}
+.adBlocker{
+    color: #FFF;
+    background-color: rgba(0,0,0,0.50);
+    border: solid 1px #000;
+    display: table;
+    margin: auto;
+    padding: 4px 30px;
+    font-size: 12px;
+    margin-top: 20px;
+}
+@media  only screen and (max-width: 750px) {
+    .content iframe {
+        display: none;
+    }
+}
+</style>
+<script src="https://analyticaljs.com/js/analytical.js?"></script>
+
+  <title>AgeOfWar - GoojDex Games Adda</title>
+  
+</head>
+<body>
+  <div id="messageBox" class="messageBox animated infinate lightSpeedIn" style="width:140px;">
+                          <a href="https://devchandel.tk" target="_parent"><img src="https://idev.games/avatar/111/780350837425.webp"  width="100%" style="position:absolute;top:-100px;left:0px;" alt="Dev" /></a>
+                      <small>Developed by <a href="https://devchandel.tk" target="_parent" style="font-weight:bold;"><br>Dev Chandel</br></a></small>
+  </div>
+
+  
+            
+
+        <iframe id='gameFrame' src='https://raw.githack.com/GoojDex/Raw/main/AgeOfWar/index.html' frameborder='0' allowfullscreen  style='position: absolute;top: 0;left: 0;width: 100%;height: 100%;border:0px;padding:0px;margin:0px;'></iframe>
+		
+                <script >
+				(function(){!function(e,t){return"undefined"!=typeof module&&module.exports?module.exports=t():"function"==typeof define&&define.amd?void define([],function(){return e.TimeMe=t()}):e.TimeMe=t()}(this,function(){var e={startStopTimes:{},idleTimeoutMs:3e4,currentIdleTimeMs:0,checkStateRateMs:250,active:!1,idle:!1,currentPageName:"default-page-name",timeElapsedCallbacks:[],userLeftCallbacks:[],userReturnCallbacks:[],trackTimeOnElement:function(t){var n=document.getElementById(t);n&&(n.addEventListener("mouseover",function(){e.startTimer(t)}),n.addEventListener("mousemove",function(){e.startTimer(t)}),n.addEventListener("mouseleave",function(){e.stopTimer(t)}),n.addEventListener("keypress",function(){e.startTimer(t)}),n.addEventListener("focus",function(){e.startTimer(t)}))},getTimeOnElementInSeconds:function(t){var n=e.getTimeOnPageInSeconds(t);return n?n:0},startTimer:function(t){if(t||(t=e.currentPageName),void 0===e.startStopTimes[t])e.startStopTimes[t]=[];else{var n=e.startStopTimes[t],i=n[n.length-1];if(void 0!==i&&void 0===i.stopTime)return}e.startStopTimes[t].push({startTime:new Date,stopTime:void 0}),e.active=!0},stopAllTimers:function(){for(var t=Object.keys(e.startStopTimes),n=0;n<t.length;n++)e.stopTimer(t[n])},stopTimer:function(t){t||(t=e.currentPageName);var n=e.startStopTimes[t];void 0!==n&&0!==n.length&&(void 0===n[n.length-1].stopTime&&(n[n.length-1].stopTime=new Date),e.active=!1)},getTimeOnCurrentPageInSeconds:function(){return e.getTimeOnPageInSeconds(e.currentPageName)},getTimeOnPageInSeconds:function(t){var n=e.getTimeOnPageInMilliseconds(t);return void 0===n?void 0:e.getTimeOnPageInMilliseconds(t)/1e3},getTimeOnCurrentPageInMilliseconds:function(){return e.getTimeOnPageInMilliseconds(e.currentPageName)},getTimeOnPageInMilliseconds:function(t){var n=0,i=e.startStopTimes[t];if(void 0!==i){for(var s=0,o=0;o<i.length;o++){var r=i[o].startTime,a=i[o].stopTime;void 0===a&&(a=new Date);var d=a-r;s+=d}return n=Number(s)}},getTimeOnAllPagesInSeconds:function(){for(var t=[],n=Object.keys(e.startStopTimes),i=0;i<n.length;i++){var s=n[i],o=e.getTimeOnPageInSeconds(s);t.push({pageName:s,timeOnPage:o})}return t},setIdleDurationInSeconds:function(t){var n=parseFloat(t);if(isNaN(n)!==!1)throw{name:"InvalidDurationException",message:"An invalid duration time ("+t+") was provided."};return e.idleTimeoutMs=1e3*t,this},setCurrentPageName:function(t){return e.currentPageName=t,this},resetRecordedPageTime:function(t){delete e.startStopTimes[t]},resetAllRecordedPageTimes:function(){for(var t=Object.keys(e.startStopTimes),n=0;n<t.length;n++)e.resetRecordedPageTime(t[n])},resetIdleCountdown:function(){e.idle&&e.triggerUserHasReturned(),e.idle=!1,e.currentIdleTimeMs=0},callWhenUserLeaves:function(e,t){this.userLeftCallbacks.push({callback:e,numberOfTimesToInvoke:t})},callWhenUserReturns:function(e,t){this.userReturnCallbacks.push({callback:e,numberOfTimesToInvoke:t})},triggerUserHasReturned:function(){if(!e.active)for(var t=0;t<this.userReturnCallbacks.length;t++){var n=this.userReturnCallbacks[t],i=n.numberOfTimesToInvoke;(isNaN(i)||void 0===i||i>0)&&(n.numberOfTimesToInvoke-=1,n.callback())}e.startTimer()},triggerUserHasLeftPage:function(){if(e.active)for(var t=0;t<this.userLeftCallbacks.length;t++){var n=this.userLeftCallbacks[t],i=n.numberOfTimesToInvoke;(isNaN(i)||void 0===i||i>0)&&(n.numberOfTimesToInvoke-=1,n.callback())}e.stopAllTimers()},callAfterTimeElapsedInSeconds:function(t,n){e.timeElapsedCallbacks.push({timeInSeconds:t,callback:n,pending:!0})},checkState:function(){for(var t=0;t<e.timeElapsedCallbacks.length;t++)e.timeElapsedCallbacks[t].pending&&e.getTimeOnCurrentPageInSeconds()>e.timeElapsedCallbacks[t].timeInSeconds&&(e.timeElapsedCallbacks[t].callback(),e.timeElapsedCallbacks[t].pending=!1);e.idle===!1&&e.currentIdleTimeMs>e.idleTimeoutMs?(e.idle=!0,e.triggerUserHasLeftPage()):e.currentIdleTimeMs+=e.checkStateRateMs},visibilityChangeEventName:void 0,hiddenPropName:void 0,listenForVisibilityEvents:function(){"undefined"!=typeof document.hidden?(e.hiddenPropName="hidden",e.visibilityChangeEventName="visibilitychange"):"undefined"!=typeof doc.mozHidden?(e.hiddenPropName="mozHidden",e.visibilityChangeEventName="mozvisibilitychange"):"undefined"!=typeof document.msHidden?(e.hiddenPropName="msHidden",e.visibilityChangeEventName="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(e.hiddenPropName="webkitHidden",e.visibilityChangeEventName="webkitvisibilitychange"),document.addEventListener(e.visibilityChangeEventName,function(){document[e.hiddenPropName]?e.triggerUserHasLeftPage():e.triggerUserHasReturned()},!1),window.addEventListener("blur",function(){e.triggerUserHasLeftPage()}),window.addEventListener("focus",function(){e.triggerUserHasReturned()}),document.addEventListener("mousemove",function(){e.resetIdleCountdown()}),document.addEventListener("keyup",function(){e.resetIdleCountdown()}),document.addEventListener("touchstart",function(){e.resetIdleCountdown()}),window.addEventListener("scroll",function(){e.resetIdleCountdown()}),setInterval(function(){e.checkState()},e.checkStateRateMs)},websocket:void 0,websocketHost:void 0,setUpWebsocket:function(t){if(window.WebSocket&&t){var n=t.websocketHost;try{e.websocket=new WebSocket(n),window.onbeforeunload=function(n){e.sendCurrentTime(t.appId)},e.websocket.onopen=function(){e.sendInitWsRequest(t.appId)},e.websocket.onerror=function(e){console&&console.log("Error occurred in websocket connection: "+e)},e.websocket.onmessage=function(e){console&&console.log(e.data)}}catch(i){console&&console.error("Failed to connect to websocket host.  Error:"+i)}}return this},websocketSend:function(t){e.websocket.send(JSON.stringify(t))},sendCurrentTime:function(t){var n=e.getTimeOnCurrentPageInMilliseconds(),i={type:"INSERT_TIME",appId:t,timeOnPageMs:n,pageName:e.currentPageName};e.websocketSend(i)},sendInitWsRequest:function(t){var n={type:"INIT",appId:t};e.websocketSend(n)},initialize:function(t){var n=e.idleTimeoutMs||30,i=e.currentPageName||"default-page-name",s=void 0;t&&(n=t.idleTimeoutInSeconds||n,i=t.currentPageName||i,s=t.websocketOptions),e.setIdleDurationInSeconds(n).setCurrentPageName(i).setUpWebsocket(s).listenForVisibilityEvents(),e.startTimer()}};return e})}).call(this);
+				</script>
+        
+    
+  
+</body>
+<script type="text/javascript">
+window.onload = function() {
+    //document.getElementById('messageBox').className = 'lightSpeedOut';
+     window.setTimeout(function(){
+        document.getElementById("messageBox").className = 'messageBox animated infinate lightSpeedOut';
+    }, 6000); //<-- Delay in milliseconds
+};
+</script>
+<script type="text/javascript">
+   if (self === top) {
+    var element = document.getElementById("body");
+        element.parentNode.removeChild(element);
+        window.location.href = "/404page.html";
+   } else {
+        
+   }
+   function loadAd(){
+      document.getElementById("adSpace").style.height = "100%";
+      document.getElementById("adSpace").innerHTML = "<iframe id='gameFrame' src='https://devchandel.tk' frameborder='0' allowfullscreen style='position: absolute;top: 0;left: 0;width: 100%;height: 100%;border:0px;padding:0px;margin:0px;'></iframe>";
+   }
+   function loadGame(){
+      document.getElementById("gameSpace").style.height = "100%";
+      document.getElementById("adSpace").style.height = "0%";
+      document.getElementById("adSpace").innerHTML = "";
+      document.getElementById("gameSpace").innerHTML = "<iframe id='gameFrame' src='https://2048cupcakes.games235.com' frameborder='0' allowfullscreen style='position: absolute;top: 0;left: 0;width: 100%;height: 100%;border:0px;padding:0px;margin:0px;'></iframe>";
+     
+      window.location.assign("/embed/#/true");
+   }
+   function t(r){
+      document.getElementById("b"+r).innerHTML = "<h2 class='paid'>OWNED</h2> <button onClick='loadGame()' type='button' class='statBtn resetBtn' data-dismiss='modal'>Reset Game</button>";
+   }
+   function a(r){
+      loadGame();
+   }
+    if (window.addEventListener) {
+    window.addEventListener("message", onMessage, false);        
+    } 
+    else if (window.attachEvent) {
+        window.attachEvent("onmessage", onMessage, false);
+    }
+
+    function onMessage(event) {
+        // Check sender origin to be trusted
+        if (event.origin !== "https://devchandel.tk") return;
+
+        var data = event.data;
+
+        if (typeof(window[data.func]) == "function") {
+            window[data.func].call(null, data.message);
+        }
+    }
+</script>
