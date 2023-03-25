@@ -58,23 +58,7 @@ body::-webkit-scrollbar-thumb {
     z-index: 99999999;
     background-color:#000;
 }
-#adSpace{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999999999;
-}
-.adBlocker{
-    color: #FFF;
-    background-color: rgba(0,0,0,0.50);
-    border: solid 1px #000;
-    display: table;
-    margin: auto;
-    padding: 4px 30px;
-    font-size: 12px;
-    margin-top: 20px;
-}
+
 @media  only screen and (max-width: 750px) {
     .content iframe {
         display: none;
@@ -88,7 +72,7 @@ body::-webkit-scrollbar-thumb {
 </head>
 <body>
   <div id="messageBox" class="messageBox animated infinate lightSpeedIn" style="width:140px;">
-                          <a href="https://devchandel.tk" target="_parent"><img src="https://idev.games/avatar/111/780350837425.webp"  width="100%" style="position:absolute;top:-100px;left:0px;" alt="Dev" /></a>
+                          <a href="https://devchandel.tk" target="_parent"><img src="https://raw.githubusercontent.com/GoojDex/Games-Assets/main/GoojDex_Image.webp?token=GHSAT0AAAAAACAE4QIF32PPH6TZSCOV2EGGZA6P4NQ"  width="100%" style="position:absolute;top:-100px;left:0px;" alt="Dev" /></a>
                       <small>Developed by <a href="https://devchandel.tk" target="_parent" style="font-weight:bold;"><br>Dev Chandel</br></a></small>
   </div>
 
@@ -112,47 +96,4 @@ window.onload = function() {
     }, 6000); //<-- Delay in milliseconds
 };
 </script>
-<script type="text/javascript">
-   if (self === top) {
-    var element = document.getElementById("body");
-        element.parentNode.removeChild(element);
-        window.location.href = "/404page.html";
-   } else {
-        
-   }
-   function loadAd(){
-      document.getElementById("adSpace").style.height = "100%";
-      document.getElementById("adSpace").innerHTML = "<iframe id='gameFrame' src='https://devchandel.tk' frameborder='0' allowfullscreen style='position: absolute;top: 0;left: 0;width: 100%;height: 100%;border:0px;padding:0px;margin:0px;'></iframe>";
-   }
-   function loadGame(){
-      document.getElementById("gameSpace").style.height = "100%";
-      document.getElementById("adSpace").style.height = "0%";
-      document.getElementById("adSpace").innerHTML = "";
-      document.getElementById("gameSpace").innerHTML = "<iframe id='gameFrame' src='https://2048cupcakes.games235.com' frameborder='0' allowfullscreen style='position: absolute;top: 0;left: 0;width: 100%;height: 100%;border:0px;padding:0px;margin:0px;'></iframe>";
-     
-      window.location.assign("/embed/#/true");
-   }
-   function t(r){
-      document.getElementById("b"+r).innerHTML = "<h2 class='paid'>OWNED</h2> <button onClick='loadGame()' type='button' class='statBtn resetBtn' data-dismiss='modal'>Reset Game</button>";
-   }
-   function a(r){
-      loadGame();
-   }
-    if (window.addEventListener) {
-    window.addEventListener("message", onMessage, false);        
-    } 
-    else if (window.attachEvent) {
-        window.attachEvent("onmessage", onMessage, false);
-    }
 
-    function onMessage(event) {
-        // Check sender origin to be trusted
-        if (event.origin !== "https://devchandel.tk") return;
-
-        var data = event.data;
-
-        if (typeof(window[data.func]) == "function") {
-            window[data.func].call(null, data.message);
-        }
-    }
-</script>
